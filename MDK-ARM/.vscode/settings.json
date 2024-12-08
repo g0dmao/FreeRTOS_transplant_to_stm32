@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "task.h": "c",
+        "freertos.h": "c",
+        "stdlib.h": "c",
+        "timers.h": "c",
+        "stack_macros.h": "c",
+        "gpio.h": "c",
+        "main.h": "c",
+        "oled.h": "c",
+        "user_task.h": "c",
+        "stm32f1xx_hal.h": "c"
+    }
+}
