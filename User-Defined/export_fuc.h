@@ -1,9 +1,6 @@
 #ifndef EXPORT_FUC_H
 #define EXPORT_FUC_H
 
-#include "FreeRTOS.h"
-#include "stm32f1xx.h"
-#include "task.h"
 
 /* Condition ------------------------------------------------------------------*/
 
