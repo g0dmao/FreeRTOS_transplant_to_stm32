@@ -1,10 +1,11 @@
 # 基于 **stm32f103c8** 的 *FreeRTOS* 移植新建工程模板
 <!-- vscode-markdown-toc -->
-* 1. [1、作者说](#)
-* 2. [2、版本说明](#-1)
-* 3. [3、项目简介](#-1)
-* 4. [4、特点](#-1)
-* 5. [5、说明](#-1)
+* 1. [作者说](#)
+* 2. [版本说明](#-1)
+* 3. [项目简介](#-1)
+* 4. [特点](#-1)
+* 5. [说明](#-1)
+	* 5.1. [AC6(ARM Compiler v6)版本说明](#AC6ARMCompilerv6)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -20,6 +21,7 @@
 ##  2. <a name='-1'></a>版本说明
 
 - 2024.12.8 第一次发布
+- 2024.12.18 增加了AC6版本
 
 ##  3. <a name='-1'></a>项目简介
 
@@ -41,5 +43,15 @@
 
 - *”UserDefined/export_fuc.c“*: 此文件定义了一些必要的功能函数，如一些处理系统错误的钩子函数、在一些宏定义开启时所需要的自己实现的函数（保能正确实现其功能）、断言等等。系统的时钟配置也在此。
 - 文件采用UTF8编码。
+
+###  5.1. <a name='AC6ARMCompilerv6'></a>AC6(ARM Compiler v6)版本说明
+
+ARM Compiler 6 完全改变了处理汇编代码的策略。
+汇编语法现在兼容GNU风格而不是ARM风格。 汇编也是由C编译器完成， 无需单独的汇编器。
+
+FreeRTOS的移植层由`..\FreeRTOS\Source\portable\RVDS\ARM_CM3`目录下的`port.c`和`portmacro.h`文件改为`..\FreeRTOS\Source\portable\GCC\ARM_CM3`目录下的`port.c`和`portmacro.h`文件。
+这是因为这两个文件会涉及内嵌汇编。
+
+个人建议使用AC5版本。
 
 <br>MarkDown应该是这么写的吧。。qaq
